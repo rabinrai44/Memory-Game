@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/rabinrai44/Memory-Game/issues"
   },
-  "homepage": "https://rabinrai44.github.io/Memory-Game/"
+  "homepage": "https://rabinrai44.github.io/Memory-Game/",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
+  }
 }
