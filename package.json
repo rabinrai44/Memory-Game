@@ -1,0 +1,19 @@
+{
+  "name": "memory-game",
+  "version": "1.0.0",
+  "description": "The Memory Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rabinrai44/Memory-Game.git"
+  },
+  "author": "Rabin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rabinrai44/Memory-Game/issues"
+  },
+  "homepage": "https://rabinrai44.github.io/Memory-Game/"
+}

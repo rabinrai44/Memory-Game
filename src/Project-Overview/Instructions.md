@@ -1,0 +1,2 @@
+## Get The Starter Code
+If you'd like to start from scratch without any files, you are encouraged to do so! You learn the most by developing on your own! But, it can be a bit challenging having to start from scratch, so we do provide a starter project to use.
