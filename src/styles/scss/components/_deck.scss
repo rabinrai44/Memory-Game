@@ -30,18 +30,29 @@
     }
 
     .open {
-        transform: rotateY(0);
+        transform: rotateY(360deg);
         background: #02b3e4;
         cursor: default;
     }
 
     .show {
         font-size: 33px;
+
     }
 
     .match {
         cursor: default;
         background: #02ccba;
         font-size: 33px;
+        animation: match 0.8s;
+    }
+    
+    .wrong {
+        background: red;
+        animation: wrong 0.8s;
+    }
+
+    .flip {
+        transition: 0.5s;
     }
 }

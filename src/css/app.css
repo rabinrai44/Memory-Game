@@ -59,7 +59,7 @@ h1 {
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5); }
   .deck .open {
-    transform: rotateY(0);
+    transform: rotateY(360deg);
     background: #02b3e4;
     cursor: default; }
   .deck .show {
@@ -67,7 +67,13 @@ h1 {
   .deck .match {
     cursor: default;
     background: #02ccba;
-    font-size: 33px; }
+    font-size: 33px;
+    animation: match 0.8s; }
+  .deck .wrong {
+    background: red;
+    animation: wrong 0.8s; }
+  .deck .flip {
+    transition: 0.5s; }
 
 /*
  * Styles for the Score Panel
@@ -87,3 +93,29 @@ h1 {
   .score-panel .restart {
     float: right;
     cursor: pointer; }
+
+/*
+* Animation when wrong pair cards
+*/
+@keyframes wrong {
+  10%, 90% {
+    transform: translate3d(-5px, 0, 0); }
+  20%, 80% {
+    transform: translate3d(5px, 0, 0); }
+  30%, 50%, 70% {
+    transform: translate3d(-2px, 0, 0); }
+  40%, 60% {
+    transform: translate3d(1px, 0, 0); } }
+
+/*
+* Animation when match pair cards
+*/
+@keyframes match {
+  20% {
+    transform: rotate(45deg); }
+  50% {
+    transform: rotate(15deg); }
+  75% {
+    transform: rotate(40deg); }
+  100% {
+    transform: rotate(0deg); } }
