@@ -71,6 +71,11 @@ function shuffle(array) {
 */
 selectDeck.addEventListener('click', function(e) {
     if (e.target.nodeName === 'LI') { 
+        // Check the card is not more than two
+        if (showCards.length === 2){
+            //console.log("already two card is clicked!, Please check your card again if match.");
+            return;
+        }
         e.target.classList.add('flip', 'open', 'show');
         showCards.push(e.target);
     }
