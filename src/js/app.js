@@ -46,6 +46,11 @@ function shuffle(array) {
   let selectCards = document.getElementsByClassName('card');
   const allCardDecks = [...selectCards];
 
+  /* Create showCards for empty 
+  * when the card is clicked then will record card as an array
+  */
+  const showCards = [];
+
   // Create a new shuffled deck 
   function createNewDeck() {
       shuffle(allCardDecks);
@@ -61,5 +66,15 @@ function shuffle(array) {
   // Refresh the card when window is reloaded
   window.onload = createNewDeck(); 
 
-  // card 
-// Setup the event listener for a card. If a card is clicked:
+/* Setup the event listener for a card. If a card is clicked: 
+* then add a class open, show
+*/
+selectDeck.addEventListener('click', function(e) {
+    if (e.target.nodeName === 'LI') { 
+        e.target.classList.add('flip', 'open', 'show');
+        showCards.push(e.target);
+    }
+});
+
+// tested into console.log 
+console.log("ShowCards:" + showCards);
