@@ -36,3 +36,30 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+ /**
+  * Your Code Start Here 
+  */
+  // Shuffle card with randomize
+  // Selecting query 
+  const selectDeck = document.querySelector(".deck");
+  let selectCards = document.getElementsByClassName('card');
+  const allCardDecks = [...selectCards];
+
+  // Create a new shuffled deck 
+  function createNewDeck() {
+      shuffle(allCardDecks);
+      // shuffled deck and append
+    for (let i = 0; i < allCardDecks.length; i++) {
+        let newCardClass = allCardDecks[i];
+        selectDeck.appendChild(newCardClass);
+    }
+  }
+// tested into console.log 
+  console.log(allCardDecks);
+
+  // Refresh the card when window is reloaded
+  window.onload = createNewDeck(); 
+
+  // card 
+// Setup the event listener for a card. If a card is clicked:
