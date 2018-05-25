@@ -74,6 +74,9 @@ h1 {
     animation: wrong 0.8s; }
   .deck .flip {
     transition: 0.5s; }
+  .deck .disabled {
+    pointer-events: none;
+    opacity: 0.8; }
 
 /*
  * Styles for the Score Panel

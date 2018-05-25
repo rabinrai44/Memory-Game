@@ -49,9 +49,18 @@ function shuffle(array) {
   /* Create showCards for empty 
   * when the card is clicked then will record card as an array
   */
-  const showCards = [];
+  let openedCards = [];
 
-  // Create a new shuffled deck 
+  /* Create empty MatchCards
+  * when the card are matched then will record card as an array
+  */
+  const openedMatchCard = [];
+
+  /**
+   * createNewDecks() function will create new deck with random array
+   * and fillter by shuffle() function 
+   * passing the value into child elements 
+   */
   function createNewDeck() {
       shuffle(allCardDecks);
       // shuffled deck and append
@@ -66,20 +75,85 @@ function shuffle(array) {
   // Refresh the card when window is reloaded
   window.onload = createNewDeck(); 
 
+
+  /**
+   * checkMatchCards() function will check the matching two cards 
+   * and add class in both matched cards 'match', 'disabled'
+   * and remove classes 'open', 'show' as well
+   */
+  function checkMatchCards() {
+    openedMatchCard.push(openedCards);
+      for (let i = 0; i < openedCards.length; i++) {
+        openedCards[i].classList.remove('open', 'show');
+        openedCards[i].classList.add('match', 'disabled');
+      }
+      openedCards.splice(0, 2);
+  }
+
+
+  /** 
+   * Check the clicked cards if Don't match and remove the open, show classes 
+   * at the same time add the wrong class for a few seconds 
+   * and again remove that class as well and finally flip back the card
+   */
+  function checkIfCardDontMatch() {
+      for (let i = 0; i < openedCards.length; i++) {
+        openedCards[i].classList.remove('open', 'show');
+        openedCards[i].classList.add('wrong');
+
+          setTimeout(function () {
+            openedCards[0].classList.remove("wrong");
+            openedCards[1].classList.remove("wrong");
+
+            openedCards.splice(0, 2);
+            }, 1100);
+      }
+  }
+
+  /**
+   * checkCardmatch() function Check if card are matched 
+   * when you click the individual card if not card will be flipback after 1000 ms  
+   */
+  function checkCardMatch() {
+      if (openedCards.length === 2) {
+          if (openedCards[0].querySelector('i').classList.value === openedCards[1].querySelector('i').classList.value) {
+              checkMatchCards();
+          }
+          else {
+              setTimeout(checkIfCardDontMatch, 1000);
+          }
+      }
+  }
+
+/**
+ * gameWon() function check if all 8 card are matched
+ * this will give the message as you won the game 
+ * with details of stars, move counter, timer with the calling modal() function 
+ */
+  function gameWon() {
+      if (openedMatchCard.length === 8) {
+          console.log("Congratulation! Game You won");
+      }
+  }
+
+
 /* Setup the event listener for a card. If a card is clicked: 
 * then add a class open, show
 */
 selectDeck.addEventListener('click', function(e) {
     if (e.target.nodeName === 'LI') { 
         // Check the card is not more than two
-        if (showCards.length === 2){
+        if (openedCards.length === 2){
             //console.log("already two card is clicked!, Please check your card again if match.");
             return;
         }
         e.target.classList.add('flip', 'open', 'show');
-        showCards.push(e.target);
+        openedCards.push(e.target);
     }
+
+    checkCardMatch();
+    gameWon();
 });
 
 // tested into console.log 
-console.log("ShowCards:" + showCards);
+console.log("ShowCards:" + openedCards);

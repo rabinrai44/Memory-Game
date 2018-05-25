@@ -55,4 +55,9 @@
     .flip {
         transition: 0.5s;
     }
+
+    .disabled {
+        pointer-events: none;
+        opacity: 0.8;
+    }
 }
