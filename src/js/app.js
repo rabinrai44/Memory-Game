@@ -136,6 +136,32 @@ function shuffle(array) {
       }
   }
 
+  /**
+   * timer() function will start counting the time
+   * when user start to click card/start to play game
+   */
+  let timer = document.querySelector('.timer');
+  let second = 0;
+  let minute = 0;
+  let hour = 0;
+  let interval;
+
+   function startTimer() {
+        interval = setInterval(function() {
+            timer.innerHTML = minute + " min " +second + " second";
+            second++;
+            if (second == 60) {
+                minute++;
+                second = 0;
+            }
+            if (minute == 60) {
+                hour++;
+                minute = 0;
+            }
+        }, 1000);
+   }
+// Start up time on first click on card
+selectDeck.addEventListener('click', startTimer, {once: true });
 
 /* Setup the event listener for a card. If a card is clicked: 
 * then add a class open, show
@@ -151,6 +177,7 @@ selectDeck.addEventListener('click', function(e) {
         openedCards.push(e.target);
     }
 
+    // startTimer();
     checkCardMatch();
     gameWon();
 });
