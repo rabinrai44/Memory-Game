@@ -117,6 +117,7 @@ function shuffle(array) {
    */
   function checkCardMatch() {
       if (openedCards.length === 2) {
+          cardMoveCounter();
           if (openedCards[0].querySelector('i').classList.value === openedCards[1].querySelector('i').classList.value) {
               checkMatchCards();
           }
@@ -203,6 +204,7 @@ selectDeck.addEventListener('click', startTimer, {once: true });
  * when user start playing game
  */
 let moves = 0;
+let counter = document.querySelector(".moves");
 function cardMoveCounter() {
     moves++;
     counter.innerHTML = moves;
