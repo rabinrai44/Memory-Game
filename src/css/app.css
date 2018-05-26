@@ -122,3 +122,58 @@ h1 {
     transform: rotate(40deg); }
   100% {
     transform: rotate(0deg); } }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(1, 1, 1, 0.619);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0; }
+  .overlay .popup {
+    margin: 10%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 70%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    font-family: 'Gloria Hallelujah', cursive; }
+    .overlay .popup h2 {
+      font-size: 4rem;
+      text-align: center;
+      margin-top: -10px; }
+    .overlay .popup .close {
+      color: #fff;
+      font-family: 'Arial';
+      font-size: 24px;
+      text-decoration: none;
+      text-align: center;
+      background: #f72121;
+      border-radius: 7px;
+      height: 40px;
+      width: 40px;
+      margin: 10px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      line-height: 1.6;
+      cursor: pointer; }
+      .overlay .popup .close:hover {
+        background: #942020; }
+    .overlay .popup #play-again {
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: bold;
+      background: #b3b30d;
+      padding: 15px;
+      cursor: pointer; }
+      .overlay .popup #play-again:hover {
+        background: #c2c21d; }
+
+.modal_show {
+  visibility: visible;
+  opacity: 1; }

@@ -83,6 +83,7 @@ function shuffle(array) {
    */
   function checkMatchCards() {
     openedMatchCard.push(openedCards);
+    // cardMoveCounter();
       for (let i = 0; i < openedCards.length; i++) {
         openedCards[i].classList.remove('open', 'show');
         openedCards[i].classList.add('match', 'disabled');
@@ -132,10 +133,43 @@ function shuffle(array) {
  */
   function gameWon() {
       if (openedMatchCard.length === 8) {
-          console.log("Congratulation! Game You won");
+          openModal();
+          closeModal();
       }
   }
 
+  // Declared variable for modal open/close
+  let modal = document.getElementById('modal');
+  let closeIcon = document.querySelector('.close');
+
+  /**
+   * openModal() function will hold and display
+   * the game details like congrats message, stars, moves, time etc.
+   */
+  function openModal() {
+    modal.classList.add("modal_show");
+    console.log("Modal has been opened!");
+  }
+
+  /**
+   * closeModal() enable to user close opened modal
+   * after the game complete
+   */ 
+  function closeModal() {
+      closeIcon.addEventListener("click", function(e) {
+          modal.classList.remove("modal_show");
+          console.log("Modal has been closed!");
+      });
+  }
+
+  /**
+   * playAgain() function will user can 
+   * reset the game and play again
+   */
+  function playAgain() {
+      console.log("play again!");
+  }
+  
   /**
    * timer() function will start counting the time
    * when user start to click card/start to play game
@@ -162,6 +196,25 @@ function shuffle(array) {
    }
 // Start up time on first click on card
 selectDeck.addEventListener('click', startTimer, {once: true });
+
+
+/**
+ * cardMoveCounter() function will start counting the card move 
+ * when user start playing game
+ */
+let moves = 0;
+function cardMoveCounter() {
+    moves++;
+    counter.innerHTML = moves;
+
+    if (moves == 1) {
+        second = 0;
+        minute = 0;
+        hour = 0;
+        startTimer();
+    }
+}
+
 
 /* Setup the event listener for a card. If a card is clicked: 
 * then add a class open, show
