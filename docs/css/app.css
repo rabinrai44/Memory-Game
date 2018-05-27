@@ -83,7 +83,7 @@ h1 {
  */
 .score-panel {
   text-align: left;
-  width: 345px;
+  width: 400px;
   margin-bottom: 10px; }
   .score-panel .stars {
     margin: 0;
@@ -99,6 +99,9 @@ h1 {
   .score-panel .restart {
     float: right;
     cursor: pointer; }
+  .score-panel .timer {
+    display: inline-flex;
+    margin-left: 2rem; }
 
 /*
 * Animation when wrong pair cards
@@ -178,6 +181,10 @@ h1 {
       transform: translateX(-50%); }
       .overlay .popup #play-again:hover {
         background-color: #c2c21d; }
+    .overlay .popup #rating {
+      color: #ffd700 !important;
+      list-style: none;
+      display: inline-flex; }
 
 .modal_show {
   visibility: visible;

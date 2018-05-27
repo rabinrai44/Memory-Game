@@ -65,6 +65,9 @@ function shuffle(array) {
   let hour = 0;
   let interval;
 
+  // stars variables
+  const stars = document.querySelectorAll(".fa-star");
+
 /**
  * resetGame() function allows us to refresh the page 
  * when user click on reset button and game will be reset everything
@@ -154,8 +157,19 @@ function resetGame() {
       if (openedMatchCard.length === 8) {
           openModal();
           totalMoveAndTime();   
+          showRating();
           closeModal();
       }
+  }
+
+  /**
+   * showRatingOnModal() function will display the rating when the game is over 
+   * and popup modal window based on the number of card moves 
+   */
+  function showRating() {
+      let starRate = document.querySelector(".stars").innerHTML;
+      // show ratiing
+      document.getElementById("rating").innerHTML = starRate;
   }
 
   /**
@@ -200,7 +214,7 @@ function resetGame() {
    */
    function startTimer() {
         interval = setInterval(function() {
-            timer.innerHTML = minute + " min " +second + " second";
+            timer.innerHTML = "Time: " + minute + " min " +second + " second";
             second++;
             if (second == 60) {
                 minute++;
@@ -230,6 +244,22 @@ function cardMoveCounter() {
         minute = 0;
         hour = 0;
         startTimer();
+    }
+
+    // Live rating system based on card moves 
+    if (moves > 8 && moves < 12) {
+        for (i =0; i <3; i++) {
+            if (i > 1) {
+                stars[i].style.visibility = "collapse";
+            }
+        }
+    }
+    else if (moves > 13) {
+        for (i =0; i < 3; i++) {
+            if (i > 0) {
+                stars[i].style.visibility = "collapse";
+            }
+        }
     }
 }
 
