@@ -1,0 +1,192 @@
+html {
+  box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #ffffff url("../img/geometry2.png");
+  /* Background pattern from Subtle Patterns */
+  font-family: 'Coda', cursive; }
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.navbar {
+  color: aqua; }
+
+/*
+ * Styles for the deck of cards
+ */
+.deck {
+  width: 660px;
+  min-height: 680px;
+  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 3em; }
+  .deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5); }
+  .deck .open {
+    transform: rotateY(360deg);
+    background: #02b3e4;
+    cursor: default; }
+  .deck .show {
+    font-size: 33px; }
+  .deck .match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+    animation: match 0.8s; }
+  .deck .wrong {
+    background: red;
+    animation: wrong 0.8s; }
+  .deck .flip {
+    transition: 0.5s; }
+  .deck .disabled {
+    pointer-events: none;
+    opacity: 0.8; }
+
+/*
+ * Styles for the Score Panel
+ */
+.score-panel {
+  text-align: left;
+  width: 345px;
+  margin-bottom: 10px; }
+  .score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0; }
+    .score-panel .stars li {
+      font-size: 20px;
+      list-style: none;
+      display: inline-block; }
+    .score-panel .stars .fa-star {
+      color: #ffd700; }
+  .score-panel .restart {
+    float: right;
+    cursor: pointer; }
+
+/*
+* Animation when wrong pair cards
+*/
+@keyframes wrong {
+  10%, 90% {
+    transform: translate3d(-5px, 0, 0); }
+  20%, 80% {
+    transform: translate3d(5px, 0, 0); }
+  30%, 50%, 70% {
+    transform: translate3d(-2px, 0, 0); }
+  40%, 60% {
+    transform: translate3d(1px, 0, 0); } }
+
+/*
+* Animation when match pair cards
+*/
+@keyframes match {
+  20% {
+    transform: rotate(45deg); }
+  50% {
+    transform: rotate(15deg); }
+  75% {
+    transform: rotate(40deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(1, 1, 1, 0.8);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0; }
+  .overlay .popup {
+    margin: 10% auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    min-height: 440px;
+    max-width: 50%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    font-family: 'Gloria Hallelujah', cursive; }
+    .overlay .popup h2 {
+      font-size: 4rem;
+      text-align: center;
+      margin-top: -10px; }
+    .overlay .popup .close {
+      color: #fff;
+      font-family: 'Arial';
+      font-size: 24px;
+      text-decoration: none;
+      text-align: center;
+      background-color: #f72121;
+      height: 40px;
+      width: 40px;
+      margin: 10px;
+      padding-left: 14px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      line-height: 0.25; }
+      .overlay .popup .close:hover {
+        background: #942020; }
+    .overlay .popup #play-again {
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: bold;
+      background-color: #b3b30d;
+      position: absolute;
+      left: 50%;
+      bottom: 10px;
+      transform: translateX(-50%); }
+      .overlay .popup #play-again:hover {
+        background-color: #c2c21d; }
+
+.modal_show {
+  visibility: visible;
+  opacity: 1; }
+
+.btn {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  line-height: 1.6;
+  padding: 15px;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
