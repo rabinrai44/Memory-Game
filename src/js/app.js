@@ -135,8 +135,20 @@ function shuffle(array) {
   function gameWon() {
       if (openedMatchCard.length === 8) {
           openModal();
+          totalMoveAndTime();   
           closeModal();
       }
+  }
+
+  /**
+   * totalMoveAndTime() function calculates the total time while playing an end of the game
+   * it pull the number of card moves 
+   */
+  function totalMoveAndTime() {
+        clearInterval(interval);
+        totalTime = timer.innerHTML;
+        document.getElementById("total-time").innerHTML = totalTime;
+        document.getElementById("total-move").innerHTML = moves;
   }
 
   // Declared variable for modal open/close
