@@ -37,10 +37,11 @@
             height: 40px;
             width: 40px;
             margin: 10px;
+            padding-left: 14px;
             position: absolute;
             right: 0;
             top: 0;
-            line-height: 0.5;
+            line-height: 0.25;
 
             &:hover {
                 background: rgb(148, 32, 32);
