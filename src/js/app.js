@@ -103,11 +103,11 @@ function shuffle(array) {
         openedCards[i].classList.add('wrong');
 
           setTimeout(function () {
-            openedCards[0].classList.remove("wrong");
-            openedCards[1].classList.remove("wrong");
-
+              for (let j = 0; j < openedCards.length; j++) {
+                  openedCards[j].classList.remove("wrong");
+              }
             openedCards.splice(0, 2);
-            }, 1100);
+            }, 500);
       }
   }
 
