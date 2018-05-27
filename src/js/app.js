@@ -123,7 +123,7 @@ function resetGame() {
         openedCards[i].classList.remove('open', 'show');
         openedCards[i].classList.add('wrong');
 
-          setTimeout(function () {
+          setTimeout( ()=> {
               for (let j = 0; j < openedCards.length; j++) {
                   openedCards[j].classList.remove("wrong");
               }
@@ -264,7 +264,7 @@ function cardMoveCounter() {
 /* Setup the event listener for a card. If a card is clicked: 
 * then add a class open, show
 */
-selectDeck.addEventListener('click', function(e) {
+selectDeck.addEventListener('click', (e) => {
     if (e.target.nodeName === 'LI') { 
         // Check the card is not more than two
         if (openedCards.length === 2){
