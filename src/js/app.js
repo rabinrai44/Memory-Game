@@ -226,9 +226,6 @@ function resetGame() {
             }
         }, 1000);
    }
-// Start up time on first click on card
-selectDeck.addEventListener('click', startTimer, {once: true });
-
 
 /**
  * cardMoveCounter() function will start counting the card move 
