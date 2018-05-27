@@ -5,17 +5,18 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: (rgba(1, 1, 1, 0.619));
+    background-color: (rgba(1, 1, 1, 0.8));
     transition: opacity 500ms;
     visibility: hidden;
     opacity: 0;
 
     .popup {
-        margin: 10%;
+        margin: 10% auto;
         padding: 20px;
         background: #fff;
         border-radius: 5px;
-        width: 70%;
+        min-height: 440px;
+        max-width: 50%;
         position: relative;
         transition: all 5s ease-in-out;
         font-family: 'Gloria Hallelujah', cursive;
@@ -32,16 +33,14 @@
             font-size: 24px;
             text-decoration: none;
             text-align: center;
-            background: rgb(247, 33, 33);
-            border-radius: 7px;
+            background-color: rgb(247, 33, 33);
             height: 40px;
             width: 40px;
             margin: 10px;
             position: absolute;
             right: 0;
             top: 0;
-            line-height: 1.6;
-            cursor: pointer;
+            line-height: 0.5;
 
             &:hover {
                 background: rgb(148, 32, 32);
@@ -52,12 +51,14 @@
             color: #fff;
             font-size: 1.25rem;
             font-weight: bold;
-            background: rgb(179, 179, 13);
-            padding: 15px;
-            cursor: pointer;
-
+            background-color: rgb(179, 179, 13);
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            transform: translateX(-50%);
+            
             &:hover {
-                background: rgb(194, 194, 29);
+                background-color: rgb(194, 194, 29);
             }
         }
     }
