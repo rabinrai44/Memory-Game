@@ -91,8 +91,11 @@ h1 {
     display: inline-block;
     margin: 0 5px 0 0; }
     .score-panel .stars li {
+      font-size: 20px;
       list-style: none;
       display: inline-block; }
+    .score-panel .stars .fa-star {
+      color: #ffd700; }
   .score-panel .restart {
     float: right;
     cursor: pointer; }

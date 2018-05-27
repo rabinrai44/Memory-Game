@@ -25,7 +25,7 @@
             <span class="moves">0</span> Move(s)
             <div class="timer"></div>
 
-            <div class="restart">
+            <div class="restart" onclick="resetGame()">
         		<i class="fa fa-repeat"></i>
         	</div>
         </section>
@@ -95,7 +95,7 @@
                     <p>Total Time you spent: <span id="total-time"></span></p>
                     <p>Rating: <span id="rating"></span></p>
                 </div>
-                <button id="play-again" onclick="playAgain()">Play again!</button>
+                <button id="play-again" onclick="resetGame()">Play again!</button>
             </div>
         </div>
     </div>

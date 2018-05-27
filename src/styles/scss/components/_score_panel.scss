@@ -14,8 +14,13 @@
         margin: 0 5px 0 0;
 
         li {
+            font-size: 20px;
             list-style: none;
             display: inline-block;
+        }
+
+        .fa-star {
+            color: #ffd700;
         }
     }
 

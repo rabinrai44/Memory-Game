@@ -56,6 +56,24 @@ function shuffle(array) {
   */
   const openedMatchCard = [];
 
+  // Variables for timer, moves, counter
+  let moves = 0;
+  let counter = document.querySelector(".moves");
+  let timer = document.querySelector('.timer');
+  let second = 0;
+  let minute = 0;
+  let hour = 0;
+  let interval;
+
+/**
+ * resetGame() function allows us to refresh the page 
+ * when user click on reset button and game will be reset everything
+ */ 
+function resetGame() {
+    window.location.reload();
+}
+
+
   /**
    * createNewDecks() function will create new deck with random array
    * and fillter by shuffle() function 
@@ -171,28 +189,15 @@ function shuffle(array) {
   function closeModal() {
       closeIcon.addEventListener("click", function(e) {
           modal.classList.remove("modal_show");
+          resetGame();
           console.log("Modal has been closed!");
       });
-  }
-
-  /**
-   * playAgain() function will user can 
-   * reset the game and play again
-   */
-  function playAgain() {
-      console.log("play again!");
   }
   
   /**
    * timer() function will start counting the time
    * when user start to click card/start to play game
    */
-  let timer = document.querySelector('.timer');
-  let second = 0;
-  let minute = 0;
-  let hour = 0;
-  let interval;
-
    function startTimer() {
         interval = setInterval(function() {
             timer.innerHTML = minute + " min " +second + " second";
@@ -215,8 +220,7 @@ selectDeck.addEventListener('click', startTimer, {once: true });
  * cardMoveCounter() function will start counting the card move 
  * when user start playing game
  */
-let moves = 0;
-let counter = document.querySelector(".moves");
+
 function cardMoveCounter() {
     moves++;
     counter.innerHTML = moves;
