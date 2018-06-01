@@ -33,11 +33,25 @@ The real-life game, players flip over cards to locate the pairs that match The g
 * JavaScript
 * VS Code
 
+## How to clone locally
+Use this command in your command line: 
+```
+git clone https://github.com/rabinrai44/Memory-Game.git
+
+```
+
+or 
+download zip file into your local computer by clicking clone & download tab 
+then click on download ZIP button
+![](https://github.com/rabinrai44/Memory-Game/blob/master/src/img/clone-download.png)
+
+[Need tutorial how to clone repository?](https://help.github.com/articles/cloning-a-repository/)
+
 ## devDependencies and dependencies 
-[Node](https://nodejs.org/en/) 
-[NPM](https://www.npmjs.com/)
-[Gulp](https://gulpjs.com/)
-[Gulp-sass](https://www.npmjs.com/package/gulp-sass)
-[Browser-sync](https://www.npmjs.com/package/browser-sync)
-[Font-Awesome](https://fontawesome.com/?from=io)
-[Google-Fonts](https://fonts.google.com/specimen/Coda)
+* [Node](https://nodejs.org/en/) 
+* [NPM](https://www.npmjs.com/)
+* [Gulp](https://gulpjs.com/)
+* [Gulp-sass](https://www.npmjs.com/package/gulp-sass)
+* [Browser-sync](https://www.npmjs.com/package/browser-sync)
+* [Font-Awesome](https://fontawesome.com/?from=io)
+* [Google-Fonts](https://fonts.google.com/specimen/Coda)
