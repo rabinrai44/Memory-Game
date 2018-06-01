@@ -37,7 +37,6 @@ The real-life game, players flip over cards to locate the pairs that match The g
 Use this command in your command line: 
 ```
 git clone https://github.com/rabinrai44/Memory-Game.git
-
 ```
 
 or 
