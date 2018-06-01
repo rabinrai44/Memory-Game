@@ -277,13 +277,6 @@ function cardMoveCounter() {
   moves++;
   counter.innerHTML = moves;
 
-  if (moves == 1) {
-    second = 0;
-    minute = 0;
-    hour = 0;
-    startTimer();
-  }
-
   // Live rating system based on card moves
   if (moves > 8 && moves < 12) {
     for (i = 0; i < 3; i++) {
@@ -314,10 +307,12 @@ selectDeck.addEventListener("click", e => {
     openedCards.push(e.target);
   }
 
-  // startTimer();
+  // start timer first is clicked any of the cards.
+  moves++;
+  if (moves === 1) {
+    startTimer();
+  }
+
   checkCardMatch();
   gameWon();
 });
-
-// tested into console.log
-console.log("ShowCards:" + openedCards);
