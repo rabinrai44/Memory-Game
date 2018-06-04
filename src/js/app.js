@@ -293,6 +293,11 @@ function cardMoveCounter() {
   }
 }
 
+/**
+ * Enable startTimer() function when once any of the cards is clicked
+ */
+selectDeck.addEventListener("click", startTimer, { once: true });
+
 /* Setup the event listener for a card. If a card is clicked: 
 * then add a class open, show
 */
@@ -306,13 +311,6 @@ selectDeck.addEventListener("click", e => {
     e.target.classList.add("flip", "open", "show");
     openedCards.push(e.target);
   }
-
-  // start timer first is clicked any of the cards.
-  moves++;
-  if (moves === 1) {
-    startTimer();
-  }
-
   checkCardMatch();
   gameWon();
 });
