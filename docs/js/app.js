@@ -146,7 +146,7 @@ function checkMatchCards() {
   // cardMoveCounter();
   for (let i = 0; i < openedCards.length; i++) {
     openedCards[i].classList.remove("open", "show");
-    openedCards[i].classList.add("match", "disabled");
+    openedCards[i].classList.add("match");
   }
   openedCards.splice(0, 2);
 }
@@ -163,7 +163,7 @@ function checkIfCardDontMatch() {
 
     setTimeout(() => {
       for (let j = 0; j < openedCards.length; j++) {
-        openedCards[j].classList.remove("wrong");
+        openedCards[j].classList.remove("wrong", "disabled");
       }
       openedCards.splice(0, 2);
     }, 500);
@@ -308,7 +308,7 @@ selectDeck.addEventListener("click", e => {
       //console.log("already two card is clicked!, Please check your card again if match.");
       return;
     }
-    e.target.classList.add("flip", "open", "show");
+    e.target.classList.add("flip", "open", "show", "disabled");
     openedCards.push(e.target);
   }
   checkCardMatch();
